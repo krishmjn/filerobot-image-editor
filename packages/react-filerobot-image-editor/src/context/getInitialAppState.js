@@ -4,7 +4,7 @@ import filterStrToClass from 'utils/filterStrToClass';
 import finetunesStrsToClasses from 'utils/finetunesStrsToClasses';
 
 const getInitialAppState = (config = {}) => {
-  const loadedConfigPrepared = { ...config.loadableDesignState };
+  const loadedConfigPrepared = { ...(config.loadableDesignState || {}) };
 
   if (Array.isArray(loadedConfigPrepared.finetunes)) {
     loadedConfigPrepared.finetunes = finetunesStrsToClasses(
@@ -30,9 +30,9 @@ const getInitialAppState = (config = {}) => {
     filter: null,
     adjustments: {
       crop: {
-        ratio: config[TOOLS_IDS.CROP].ratio,
+        ratio: config[TOOLS_IDS.CROP]?.ratio ?? null,
         ratioTitleKey:
-          config[TOOLS_IDS.CROP].ratioTitleKey ?? config[TOOLS_IDS.CROP].ratio,
+          config[TOOLS_IDS.CROP]?.ratioTitleKey ?? config[TOOLS_IDS.CROP]?.ratio ?? null,
         width: null,
         height: null,
         x: 0,

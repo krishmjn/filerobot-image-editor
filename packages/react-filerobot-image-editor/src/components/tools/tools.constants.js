@@ -9,6 +9,9 @@ import { HSV, HSVOptions } from './HSV';
 import { Blur, BlurOptions } from './Blur';
 import { Warmth, WarmthOptions } from './Warmth';
 import { Filters } from './Filters';
+import { FreehandCrop } from './FreehandCrop';
+import { NoiseReduction, NoiseReductionOptions } from './opencv/NoiseReduction';
+import { RemoveBackground, RemoveBackgroundOptions } from './opencv/RemoveBackground';
 import { TextButton, TextOptions } from './Text';
 import { ImageButton, ImageOptions } from './Image';
 import { RectButton, RectOptions } from './Rect';
@@ -24,6 +27,10 @@ export const TOOLS_ITEMS = {
   [TOOLS_IDS.CROP]: {
     id: TOOLS_IDS.CROP,
     Item: Crop,
+  },
+  [TOOLS_IDS.FREEHAND_CROP]: {
+    id: TOOLS_IDS.FREEHAND_CROP,
+    Item: FreehandCrop,
   },
   [TOOLS_IDS.ROTATE]: {
     id: TOOLS_IDS.ROTATE,
@@ -58,6 +65,16 @@ export const TOOLS_ITEMS = {
     id: TOOLS_IDS.BLUR,
     Item: Blur,
     ItemOptions: BlurOptions,
+  },
+  [TOOLS_IDS.NOISE_REDUCTION]: {
+    id: TOOLS_IDS.NOISE_REDUCTION,
+    Item: NoiseReduction,
+    ItemOptions: NoiseReductionOptions,
+  },
+  [TOOLS_IDS.REMOVE_BACKGROUND]: {
+    id: TOOLS_IDS.REMOVE_BACKGROUND,
+    Item: RemoveBackground,
+    ItemOptions: RemoveBackgroundOptions,
   },
   [TOOLS_IDS.WARMTH]: {
     id: TOOLS_IDS.WARMTH,
@@ -122,6 +139,7 @@ export const TOOLS_ITEMS = {
 export const TABS_TOOLS = {
   [TABS_IDS.ADJUST]: [
     TOOLS_IDS.CROP,
+    TOOLS_IDS.FREEHAND_CROP,
     TOOLS_IDS.ROTATE,
     TOOLS_IDS.FLIP_X,
     TOOLS_IDS.FLIP_Y,
@@ -132,6 +150,8 @@ export const TABS_TOOLS = {
     TOOLS_IDS.HSV,
     TOOLS_IDS.BLUR,
     TOOLS_IDS.WARMTH,
+    TOOLS_IDS.NOISE_REDUCTION,
+    TOOLS_IDS.REMOVE_BACKGROUND,
   ],
   [TABS_IDS.FILTERS]: [TOOLS_IDS.FILTERS],
   [TABS_IDS.WATERMARK]: [TOOLS_IDS.WATERMARK],

@@ -28,6 +28,9 @@ export default defineConfig(({ mode }) => {
     base: './',
     publicDir: false,
     cacheDir: '.vite',
+    resolve: {
+      dedupe: ['react', 'react-dom'],
+    },
     plugins: [
       nodeResolve({
         extensions: ['.js', '.jsx', '.json'],

@@ -12,7 +12,7 @@ import assignFinetuneNamesToKonva from 'utils/assignFinetuneNamesToKonva';
 import { FontsFaces, OverrideDefaultStyles } from './globalStyles';
 
 const AssemblyPoint = (props) => {
-  const { source, useCloudimage, cloudimage } = props;
+  const { source, useCloudimage = false, cloudimage = {} } = props;
   if (
     !source ||
     (typeof source !== 'string' && !(source instanceof HTMLImageElement))
@@ -48,10 +48,7 @@ const AssemblyPoint = (props) => {
   );
 };
 
-AssemblyPoint.defaultProps = {
-  useCloudimage: false,
-  cloudimage: {},
-};
+// NOTE: defaultProps warning - migrate to default params
 
 AssemblyPoint.propTypes = {
   source: PropTypes.oneOfType([

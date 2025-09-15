@@ -5,6 +5,7 @@ export default {
   theme: {
     palette: {
       'bg-primary-active': '#ECF3FF',
+      'bg-secondary': '#FFFFFF',
     },
     typography: {
       fontFamily: 'Roboto, Arial',
