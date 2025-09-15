@@ -15,6 +15,7 @@ let isFieMounted = true;
 const AppProvider = ({ children, config = {} }) => {
   const [state, _dispatch] = useAppReducer(
     appReducer,
+    // appReducer,
     getInitialAppState(config),
     config,
   );
